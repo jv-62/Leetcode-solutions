@@ -29,6 +29,8 @@ const toLowerCase = (s) => {
         // 65 - 90 Are Upper case characters
         if(charCode <= 90 && charCode >= 65){
             console.log('Upper case letter');
+        }else{
+            console.log('Lower case letter');
         }
         // console.log(String.fromCharCode(charCode), charCode);
     })

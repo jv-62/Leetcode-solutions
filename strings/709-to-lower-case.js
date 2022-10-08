@@ -23,18 +23,16 @@
 
 // Solution :- 2 Using ASCII characters
 const toLowerCase = (s) => {
-    [...s].forEach((element) => {
-        const charCode = element.charCodeAt(0);
-        // 97 - 112 Are lower case characters
-        // 65 - 90 Are Upper case characters
-        if(charCode <= 90 && charCode >= 65){
-            console.log('Upper case letter');
+    const diff = 'a'.charCodeAt(0) - 'A'.charCodeAt(0);
+    let lowercaseStr = '';
+    [...s].forEach((char) => {
+        if(char >= 'A' && char <= 'Z'){
+            lowercaseStr += String.fromCharCode(char.charCodeAt(0) + diff)
         }else{
-            console.log('Lower case letter');
+            lowercaseStr += char;
         }
-        // console.log(String.fromCharCode(charCode), charCode);
     })
-    // return s.toLowerCase()
+    return lowercaseStr
 };
 
-toLowerCase('HellO');
+console.log(toLowerCase('HELlO'));
